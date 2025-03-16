@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Engine">
+      <UniqueIdentifier>{60b75be4-2175-4578-a4e7-507d56899095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Engine\Graphics2D">
+      <UniqueIdentifier>{3e93c36a-be00-49a5-8d4f-82047244c063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine">
+      <UniqueIdentifier>{d0d08eda-1ce0-4080-8758-e629d6aa0667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\Graphics2D">
+      <UniqueIdentifier>{a7177870-a8d5-4a45-8555-bd2210e1ab4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\Graphics3D">
+      <UniqueIdentifier>{1e41d519-0f4a-42ec-8a7d-457def650f9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Engine\Graphics3D">
+      <UniqueIdentifier>{b090a750-39d1-430e-a07b-e3dd8c864030}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Engine\MMath">
+      <UniqueIdentifier>{9d84b85c-9926-4e9f-94af-9b4ab00de89c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\MMath">
+      <UniqueIdentifier>{a3fe8e82-eceb-4d35-a537-8db5cb189c63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\Graphics3D\RenderingPipeline">
+      <UniqueIdentifier>{953499e3-b353-4205-965b-7a86ecd45827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\Graphics3D\Gizmos">
+      <UniqueIdentifier>{ed74bb8b-9498-49cd-a1f9-fad0dc6c512c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Engine\Graphics3D\RenderingPipeline">
+      <UniqueIdentifier>{4802d958-eff9-43cb-8d3b-25ace3274564}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Engine\GPU">
+      <UniqueIdentifier>{0150bf5c-01b2-4427-a6a6-adbbe0ddb3dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Engine\GPU\OpenCL">
+      <UniqueIdentifier>{6449953f-93bf-4949-9cc7-1fad038e29d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\GPU">
+      <UniqueIdentifier>{1a3a47a3-fee2-4594-9468-6bc6139e4c79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\GPU\OpenCL">
+      <UniqueIdentifier>{2a183d1f-b211-4044-8f0f-421fd7c4743c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Engine\File">
+      <UniqueIdentifier>{be0d5a1d-f079-4b09-96df-592bfe3722b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Engine\File\GraphicsFile">
+      <UniqueIdentifier>{7d31cc9a-2842-40fb-9c6b-6d422347674a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\Core">
+      <UniqueIdentifier>{cca64299-198e-4cf2-b2e8-9d7984a2d286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\Core\Object">
+      <UniqueIdentifier>{568ae382-a8f7-4a52-96ac-9289639efbef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\Core\Scene">
+      <UniqueIdentifier>{f87dfd6f-7796-41bb-b08f-81a675b04500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Engine\Core\Component">
+      <UniqueIdentifier>{f849e368-642d-45cd-a50a-f3a7354084fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Minerva.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MinervaWin.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics2D\MColor.h">
+      <Filter>헤더 파일\Engine\Graphics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics2D\Minerva2DGraphics.h">
+      <Filter>헤더 파일\Engine\Graphics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics2D\MBitmap.h">
+      <Filter>헤더 파일\Engine\Graphics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineController.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RenderTarget.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics2D\RenderTarget.h">
+      <Filter>헤더 파일\Engine\Graphics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MMath\Vector2.h">
+      <Filter>헤더 파일\Engine\MMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MMath\Vector3.h">
+      <Filter>헤더 파일\Engine\MMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MMath\MMath.h">
+      <Filter>헤더 파일\Engine\MMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\Minerva3DGraphics.h">
+      <Filter>헤더 파일\Engine\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\Camera.h">
+      <Filter>헤더 파일\Engine\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MMath\Matrix4x4.h">
+      <Filter>헤더 파일\Engine\MMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MMath\Vector4.h">
+      <Filter>헤더 파일\Engine\MMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MMath\TransformMatrixCalculator.h">
+      <Filter>헤더 파일\Engine\MMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MMath\Quaternion.h">
+      <Filter>헤더 파일\Engine\MMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MMath\Constants.h">
+      <Filter>헤더 파일\Engine\MMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\RenderingPipeline\VertexShader.h">
+      <Filter>헤더 파일\Engine\Graphics3D\RenderingPipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\RenderingPipeline\RenderingPipeline.h">
+      <Filter>헤더 파일\Engine\Graphics3D\RenderingPipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\Gizmos\Gizmos.h">
+      <Filter>헤더 파일\Engine\Graphics3D\Gizmos</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\RenderingPipeline\Renderer.h">
+      <Filter>헤더 파일\Engine\Graphics3D\RenderingPipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\RenderData.h">
+      <Filter>헤더 파일\Engine\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\MeshRenderer.h">
+      <Filter>헤더 파일\Engine\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\Rasterizer.h">
+      <Filter>헤더 파일\Engine\Graphics3D\RenderingPipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\GPU\GPUController.h">
+      <Filter>헤더 파일\Engine\GPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\GPU\OpenCL\OpenCLController.h">
+      <Filter>헤더 파일\Engine\GPU\OpenCL</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Timer.h">
+      <Filter>헤더 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Debug.h">
+      <Filter>헤더 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\File\GraphicsFile\MeshReader.h">
+      <Filter>소스 파일\Engine\File\GraphicsFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Object\Object.h">
+      <Filter>헤더 파일\Engine\Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Object\GameObject.h">
+      <Filter>헤더 파일\Engine\Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Component\Component.h">
+      <Filter>헤더 파일\Engine\Core\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Scene\Scene.h">
+      <Filter>헤더 파일\Engine\Core\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\RenderingPipeline\MeshRendererContainer.h">
+      <Filter>헤더 파일\Engine\Graphics3D\RenderingPipeline</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Window.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics2D\MColor.cpp">
+      <Filter>소스 파일\Engine\Graphics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics2D\MBitmap.cpp">
+      <Filter>소스 파일\Engine\Graphics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\EngineController.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics2D\RenderTarget.cpp">
+      <Filter>소스 파일\Engine\Graphics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\MMath\Vector2.cpp">
+      <Filter>소스 파일\Engine\MMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\MMath\Vector3.cpp">
+      <Filter>소스 파일\Engine\MMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\MColorExterns.cpp">
+      <Filter>소스 파일\Engine\Graphics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics3D\RenderData.cpp">
+      <Filter>소스 파일\Engine\Graphics3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics3D\Camera.cpp">
+      <Filter>소스 파일\Engine\Graphics3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\MMath\TransformMatrixCalculator.cpp">
+      <Filter>소스 파일\Engine\MMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\MMath\Quaternion.cpp">
+      <Filter>소스 파일\Engine\MMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics3D\MeshRenderer.cpp">
+      <Filter>소스 파일\Engine\Graphics3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics3D\RenderingPipeline\Renderer.cpp">
+      <Filter>소스 파일\Engine\Graphics3D\RenderingPipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\GPU\OpenCL\OpeneCLController.cpp">
+      <Filter>소스 파일\Engine\GPU\OpenCL</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\MMath\Vector4.cpp">
+      <Filter>소스 파일\Engine\MMath</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Minerva.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Minerva.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vector_add_kernel.cl">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="Engine\GPU\OpenCL\CL_Maths.cl">
+      <Filter>소스 파일\Engine\GPU\OpenCL</Filter>
+    </None>
+    <None Include="Engine\GPU\OpenCL\CL_VP_VertexShader.cl">
+      <Filter>소스 파일\Engine\GPU\OpenCL</Filter>
+    </None>
+    <None Include="Engine\GPU\OpenCL\CL_Rasterizer.cl">
+      <Filter>소스 파일\Engine\GPU\OpenCL</Filter>
+    </None>
+  </ItemGroup>
+</Project>

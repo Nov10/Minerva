@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{53c0790b-b1a3-4180-a3f6-b93f3e787bb7}</ProjectGuid>
+    <RootNamespace>Minerva</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(CUDA_LIB_PATH);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(CUDA_LIB_PATH);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Core\Component\Component.h" />
+    <ClInclude Include="Engine\Core\Object\GameObject.h" />
+    <ClInclude Include="Engine\Core\Object\Object.h" />
+    <ClInclude Include="Engine\Core\Scene\Scene.h" />
+    <ClInclude Include="Engine\Debug.h" />
+    <ClInclude Include="Engine\EngineController.h" />
+    <ClInclude Include="Engine\File\GraphicsFile\MeshReader.h" />
+    <ClInclude Include="Engine\GPU\GPUController.h" />
+    <ClInclude Include="Engine\GPU\OpenCL\OpenCLController.h" />
+    <ClInclude Include="Engine\Graphics2D\MBitmap.h" />
+    <ClInclude Include="Engine\Graphics2D\MColor.h" />
+    <ClInclude Include="Engine\Graphics2D\Minerva2DGraphics.h" />
+    <ClInclude Include="Engine\Graphics2D\RenderTarget.h" />
+    <ClInclude Include="Engine\Graphics3D\Camera.h" />
+    <ClInclude Include="Engine\Graphics3D\Gizmos\Gizmos.h" />
+    <ClInclude Include="Engine\Graphics3D\MeshRenderer.h" />
+    <ClInclude Include="Engine\Graphics3D\Minerva3DGraphics.h" />
+    <ClInclude Include="Engine\Graphics3D\Rasterizer.h" />
+    <ClInclude Include="Engine\Graphics3D\RenderData.h" />
+    <ClInclude Include="Engine\Graphics3D\RenderingPipeline\MeshRendererContainer.h" />
+    <ClInclude Include="Engine\Graphics3D\RenderingPipeline\Renderer.h" />
+    <ClInclude Include="Engine\Graphics3D\RenderingPipeline\RenderingPipeline.h" />
+    <ClInclude Include="Engine\Graphics3D\RenderingPipeline\VertexShader.h" />
+    <ClInclude Include="Engine\MMath\Constants.h" />
+    <ClInclude Include="Engine\MMath\Matrix4x4.h" />
+    <ClInclude Include="Engine\MMath\MMath.h" />
+    <ClInclude Include="Engine\MMath\Quaternion.h" />
+    <ClInclude Include="Engine\MMath\TransformMatrixCalculator.h" />
+    <ClInclude Include="Engine\MMath\Vector2.h" />
+    <ClInclude Include="Engine\MMath\Vector3.h" />
+    <ClInclude Include="Engine\MMath\Vector4.h" />
+    <ClInclude Include="Engine\RenderTarget.h" />
+    <ClInclude Include="Engine\Timer.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="Minerva.h" />
+    <ClInclude Include="MinervaWin.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\EngineController.cpp" />
+    <ClCompile Include="Engine\GPU\OpenCL\OpeneCLController.cpp" />
+    <ClCompile Include="Engine\Graphics2D\MBitmap.cpp" />
+    <ClCompile Include="Engine\Graphics2D\MColor.cpp" />
+    <ClCompile Include="Engine\Graphics2D\RenderTarget.cpp" />
+    <ClCompile Include="Engine\Graphics3D\Camera.cpp" />
+    <ClCompile Include="Engine\Graphics3D\MeshRenderer.cpp" />
+    <ClCompile Include="Engine\Graphics3D\RenderData.cpp" />
+    <ClCompile Include="Engine\Graphics3D\RenderingPipeline\Renderer.cpp" />
+    <ClCompile Include="Engine\MColorExterns.cpp" />
+    <ClCompile Include="Engine\MMath\Quaternion.cpp" />
+    <ClCompile Include="Engine\MMath\TransformMatrixCalculator.cpp" />
+    <ClCompile Include="Engine\MMath\Vector2.cpp" />
+    <ClCompile Include="Engine\MMath\Vector3.cpp" />
+    <ClCompile Include="Engine\MMath\Vector4.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WinMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Minerva.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Minerva.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Engine\GPU\OpenCL\CL_Maths.cl" />
+    <None Include="Engine\GPU\OpenCL\CL_Rasterizer.cl" />
+    <None Include="Engine\GPU\OpenCL\CL_VP_VertexShader.cl" />
+    <None Include="vector_add_kernel.cl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

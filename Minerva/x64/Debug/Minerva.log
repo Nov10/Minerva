@@ -1,0 +1,8 @@
+﻿  Renderer.cpp
+D:\VisualStudio\Rendering\Minerva\Minerva\Engine\Timer.h(29,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Engine/Graphics3D/RenderingPipeline/Renderer.cpp')
+  
+D:\VisualStudio\Rendering\Minerva\Minerva\Engine\Timer.h(33,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Engine/Graphics3D/RenderingPipeline/Renderer.cpp')
+  
+  Minerva.vcxproj -> D:\VisualStudio\Rendering\Minerva\x64\Debug\Minerva.exe
