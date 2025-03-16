@@ -31,4 +31,4 @@
 # need to check them in.
 **/goldens/*.comparison
 
-**/.vs
+.vs/
