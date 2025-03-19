@@ -46,7 +46,7 @@ public:     // default constructor
 	{
 		float distance = 1;
 		float NearPlaneDistance = 1;
-		float FarPlaneDistance = 100;
+		float FarPlaneDistance = 20;
 		float height = tan(FOV * Deg2Rad * 0.5f) * distance * 2;
 		float width = height * ((float)Width / Height);
 		float f1 = NearPlaneDistance / width;

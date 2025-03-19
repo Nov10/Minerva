@@ -103,7 +103,8 @@ int CALLBACK WinMain(
 
 	auto go = GameObject::CreateGameObject(scene);
 	auto mr = go->AddComponent<MeshRenderer>();
-	
+	//go->SetActive(false);
+	go->SetLocalScale(Vector3(1, 1, 1) * 0.5f);
 	RenderData d;
 	MeshReader::ReadMesh("C:\Aereo.obj", &d);
 	mr.get()->Datas.emplace_back(d);
@@ -116,7 +117,7 @@ int CALLBACK WinMain(
 	d2.AddCubeData();
 	mr2.get()->Datas.emplace_back(d2);
 
-	//go2->SetLocalScale(Vector3(0.5, 0.5, 0.5));
+	go2->SetLocalScale(Vector3(1, 1, 1) * 0.4f);
 
 
 	const auto pClassName = L"hw3d";
@@ -154,11 +155,12 @@ int CALLBACK WinMain(
 	BOOL gResult;
 	Timer::Initialize();
 	go->SetLocalRotation(Quaternion::FromEulerAngles(30, -30, 30));
+
 	while (true) {
 		Timer::Update();
 
-		go->SetLocalRotation(Quaternion::FromEulerAngles(10 * Timer::GetTotalTime(), 30 * Timer::GetTotalTime(), 0));
-		go2->SetLocalRotation(Quaternion::FromEulerAngles(10 * Timer::GetTotalTime(), 30 * Timer::GetTotalTime(), 0));
+		go->SetLocalRotation(Quaternion::FromEulerAngles(10 * Timer::GetTotalTime(), 30 * Timer::GetTotalTime(), 10 * Timer::GetTotalTime()));
+		go2->SetLocalRotation(Quaternion::FromEulerAngles(10 * Timer::GetTotalTime(), 30 * Timer::GetTotalTime(), 10 * Timer::GetTotalTime()));
 		if ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
 		{
 			TranslateMessage(&msg);

@@ -179,7 +179,7 @@ void OpenCLController::ReadBuffer(int bufferID, int size, void* destination)
 {
 	cl_int err = clEnqueueReadBuffer(queue, GetBuffer(bufferID), CL_TRUE, 0, size, destination, 0, nullptr, nullptr);
 	if (err != CL_SUCCESS) {
-		 //throw std::runtime_error("ERROR");
+		 throw std::runtime_error("ERROR");
 	}
 }
 void OpenCLController::Finish()

@@ -38,7 +38,6 @@ __kernel void CalculateCacheTrianglesPerTile(
     {       
         swap_vector3(&p1, &p2); 
     }
-
     int tileCountY = (int)((float)height / tileSize);
     int tileCountX = (int)((float)width / tileSize);
 
@@ -75,18 +74,20 @@ __kernel void CalculateCacheTrianglesPerTile(
 
         float min = fmin(fmin(x1, x2), fmin(x1p, x2p));
         float max = fmax(fmax(x1, x2), fmax(x1p, x2p));
-
         int txs = (int)fmax(0.0f, floor(min / tileSize));
         int txe = (int)fmin(tileCountX, ceil(max / tileSize));
-        for (int tx = txs; tx <= txe; tx++)
+        for (int tx = txs; tx < txe; tx++)
         {
-            int tileIndex = ty * tileCountY + tx;
-            int writeIndex = atomic_inc(&(triangleCountPerTile[tileIndex]));
-
-            if (writeIndex < maxTriangleCountPerTile)
+            int tileIndex = ty * tileCountX + tx;
+            if(0 <= tileIndex && tileIndex < tileCountY * tileCountX)
             {
-                triangleIndicesPerTile[tileIndex * maxTriangleCountPerTile + writeIndex] = id;
-            }
+                int writeIndex = atomic_add(&(triangleCountPerTile[tileIndex]), 1);
+
+                if (writeIndex < maxTriangleCountPerTile)
+                {
+                    triangleIndicesPerTile[tileIndex * maxTriangleCountPerTile + writeIndex] = id;
+                }
+            }            
         }
     }
 
@@ -106,17 +107,20 @@ __kernel void CalculateCacheTrianglesPerTile(
         float max = fmax(fmax(x1, x2), fmax(x1p, x2p));
 
         int txs = (int)fmax(0.0f, floor(min / tileSize));
-        int txe = (int)fmin(tileCountY, ceil(max / tileSize));
+        int txe = (int)fmin(tileCountX, ceil(max / tileSize));
 
-        for (int tx = txs; tx <= txe; tx++)
+        for (int tx = txs; tx < txe; tx++)
         {
-            int tileIndex = ty * tileCountY + tx;
-            int writeIndex = atomic_inc(&(triangleCountPerTile[tileIndex]));
-
-            if (writeIndex < maxTriangleCountPerTile)
+            int tileIndex = ty * tileCountX + tx;
+            if(0 <= tileIndex && tileIndex < tileCountY * tileCountX)
             {
-                triangleIndicesPerTile[tileIndex * maxTriangleCountPerTile + writeIndex] = id;
-            }
+                int writeIndex = atomic_add(&(triangleCountPerTile[tileIndex]), 1);
+
+                if (writeIndex < maxTriangleCountPerTile)
+                {
+                    triangleIndicesPerTile[tileIndex * maxTriangleCountPerTile + writeIndex] = id;
+                }
+            }       
         }
     }
 }

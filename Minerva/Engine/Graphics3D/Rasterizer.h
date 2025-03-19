@@ -56,15 +56,16 @@ public:
 		}
 		float z0 = 10000000;
 		GPUControl.SetBufferDatas(BufferID_ZBuffer, &z0, sizeof(float)* (cam->Width)* (cam->Height));
+
+
+		int zeroValue = 0;
+		GPUControl.SetBufferDatas(BufferID_TriangleCountPerTile, &zeroValue, sizeof(int) * quadCountWidth * quadCountHeight);
+		GPUControl.Finish();
 	}
 	void Execute(const int buffefID_vertices, const int bufferID_triangles, const int bufferID_normals, const int bufferID_frameBuffer, const int trianglesLength, const int* width, const int* height, const Vector3* light)
 	{
 		int quadCountWidth = *width / QuadSize;
 		int quadCountHeight = *height / QuadSize;
-
-		int zeroValue = 0;
-		GPUControl.SetBufferDatas(BufferID_TriangleCountPerTile, &zeroValue, sizeof(int) * quadCountWidth * quadCountHeight);
-		GPUControl.Finish();
 
 
 		size_t sizes2[] = 
@@ -76,12 +77,17 @@ public:
 		  GPUControl.GetBufferPtr(buffefID_vertices),                  GPUControl.GetBufferPtr(bufferID_triangles),
 		  width, height,													 &QuadSize, &MaxTriangleCountPerQuad };
 
+		//Debug::Log("BB");
+		//int* tmp = new int[quadCountWidth * quadCountHeight];
+		////GPUControl.ReadBuffer(BufferID_TriangleCountPerTile, sizeof(int) * quadCountWidth * quadCountHeight, tmp);
+		//for (int s = 0; s < quadCountWidth * quadCountHeight; s++)
+		//{
+		//	//if(tmp[s] > 3)
+		//		//Debug::Log(tmp[s]);
+		//}
+
+		//delete[] tmp;
 		GPUControl.ExecuteKernel(KernelID_CalculateCacheTrianglesPerTile, trianglesLength, 8, sizes2, args2);
-		//GPUControl.Finish();
-		Vector3 p;
-		GPUControl.ReadBuffer(buffefID_vertices, sizeof(Vector3), &p);
-		Debug::Log("ASDASD");
-		Debug::Log(p);
 
 		size_t sizes3[] =
 		{ sizeof(cl_mem),													 sizeof(cl_mem), 

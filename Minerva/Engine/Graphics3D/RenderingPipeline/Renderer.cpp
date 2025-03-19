@@ -61,7 +61,7 @@ void Renderer::RenderOnSingleCamera(Camera* cam)
 	ThisRasterizer.Ready(cam);
 	(*cam).Target.Clear(MColor(0, 0, 0));
 
-	RenderData* d = nullptr;
+	//RenderData* d = nullptr;
 	Matrix4x4 VP = cam->CreateVPMatrix();
 	int width = cam->Width;
 	int height = cam->Height;
@@ -103,23 +103,13 @@ void Renderer::RenderOnSingleCamera(Camera* cam)
 			int bufferResultNormals = GPUControl.CreateBuffer(CL_MEM_READ_WRITE, sizeof(Vector3) * length, nullptr);
 
 			VTXShader.Execute(length, bufferVectors, bufferNormals, bufferResults, bufferResultNormals, &M, &VP, &R, &width, &height);
-			Debug::Log("AA");
-			Debug::Log(length);
-			Vector3* tmp = new Vector3[length];
-			GPUControl.ReadBuffer(bufferResults, sizeof(Vector3) * length, tmp);
-			for (int s = 0; s < length; s++)
-			{
-					Debug::Log(tmp[s]);
-			}
-
-			delete[] tmp;
-			//GPUControl.ReadBuffer(bufferFrameBuffer, sizeof(MColor) * width * height, fBuffer);
 			//Debug::Log("AA");
 			//Debug::Log(length);
-			//for (int s = 0; s < width * height; s++)
+			//Vector3* tmp = new Vector3[length];
+			//GPUControl.ReadBuffer(bufferResults, sizeof(Vector3) * length, tmp);
+			//for (int s = 0; s < length; s++)
 			//{
-			//	if (fBuffer[s].R != 0 || fBuffer[s].G != 0 || fBuffer[s].B != 0)
-			//		Debug::Log(fBuffer[s]);
+			//		Debug::Log(tmp[s]);
 			//}
 
 			//delete[] tmp;
