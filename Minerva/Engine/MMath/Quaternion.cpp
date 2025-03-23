@@ -85,8 +85,8 @@ std::string Quaternion::ToString()
 }
 
 Vector3 Quaternion::RotateVector(const Vector3& v) const {
-    Quaternion vecQuat(v.x, v.y, v.z, 0);  // 벡터를 (x, y, z, 0) 형태의 쿼터니언으로 변환
-    Quaternion rotatedQuat = (*this) * vecQuat * conjugate();  // q * v * q^-1 계산
+    Quaternion vecQuat(0, v.x, v.y, v.z);
+    Quaternion rotatedQuat = (*this) * vecQuat * conjugate();
 
-    return Vector3(rotatedQuat.x, rotatedQuat.y, rotatedQuat.z);  // 회전된 벡터 반환
+    return Vector3(rotatedQuat.x, rotatedQuat.y, rotatedQuat.z);
 }
