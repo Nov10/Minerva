@@ -15,7 +15,7 @@ struct Quaternion {
 
     Vector3 RotateVector(const Vector3& v) const;
     Vector3 ToEulerAngles() const;
-
+	Quaternion Inverse() const;
     std::string ToString();
 
     static Quaternion FromEulerAngles(float pitch, float yaw, float roll);

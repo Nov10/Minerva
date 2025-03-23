@@ -43,23 +43,19 @@ __kernel void CalculateCacheTrianglesPerTile(
 
     int tileStartY =  (int)(fmax(0.0f, floor(p1.y / tileSize)));
     int tileEndY =    (int)(fmin(tileCountY, ceil(p3.y / tileSize)));
-    int tileMiddleY = (int)fmin(tileEndY, fmax(tileStartY, ceil(p2.y / tileSize)));
+    int tileMiddleY = (int)fmin(tileEndY, fmax(tileStartY, floor(p2.y / tileSize)));
 
 
     //수학적으로 아래 6줄은 같은 코드임
     //float inv_a_1_2 = 1.0f / ((p2.y - p1.y) / (p2.x - p1.x));
     //float inv_a_1_3 = 1.0f / ((p3.y - p1.y) / (p3.x - p1.x));
     //float inv_a_2_3 = 1.0f / ((p3.y - p2.y) / (p3.x - p2.x)); 
-    float inv_a_1_2 = ((p2.x - p1.x) / (p2.y - p1.y));
-    float inv_a_1_3 = ((p3.x - p1.x) / (p3.y - p1.y));
-    float inv_a_2_3 = ((p3.x - p2.x) / (p3.y - p2.y));
+    float inv_a_1_2t = ((p2.x - p1.x) / (p2.y - p1.y)) * tileSize;
+    float inv_a_1_3t = ((p3.x - p1.x) / (p3.y - p1.y)) * tileSize;
+    float inv_a_2_3t = ((p3.x - p2.x) / (p3.y - p2.y)) * tileSize;
 
-    float inv_a_1_2t = inv_a_1_2 * tileSize;
-    float inv_a_1_3t = inv_a_1_3 * tileSize;
-    float inv_a_2_3t = inv_a_2_3 * tileSize;
-
-    float x1 = (tileStartY * tileSize - p1.y) * inv_a_1_2 + p1.x - inv_a_1_2t;
-    float x2 = (tileStartY * tileSize - p1.y) * inv_a_1_3 + p1.x - inv_a_1_3t;
+    float x1 = (tileStartY * tileSize - p1.y) * inv_a_1_2t/tileSize + p1.x - inv_a_1_2t;
+    float x2 = (tileStartY * tileSize - p1.y) * inv_a_1_3t/tileSize + p1.x - inv_a_1_3t;
     float x1p = x1 + inv_a_1_2t;
     float x2p = x2 + inv_a_1_3t;
 
@@ -76,10 +72,10 @@ __kernel void CalculateCacheTrianglesPerTile(
         float max = fmax(fmax(x1, x2), fmax(x1p, x2p));
         int txs = (int)fmax(0.0f, floor(min / tileSize));
         int txe = (int)fmin(tileCountX, ceil(max / tileSize));
-        for (int tx = txs; tx < txe; tx++)
+        for (int tx = txs; tx <= txe; tx++)
         {
             int tileIndex = ty * tileCountX + tx;
-            if(0 <= tileIndex && tileIndex < tileCountY * tileCountX)
+            //if(0 <= tileIndex && tileIndex < tileCountY * tileCountX)
             {
                 int writeIndex = atomic_add(&(triangleCountPerTile[tileIndex]), 1);
 
@@ -91,8 +87,8 @@ __kernel void CalculateCacheTrianglesPerTile(
         }
     }
 
-    x1 = (tileMiddleY * tileSize - p3.y) * inv_a_1_3 + p3.x - inv_a_1_3t;
-    x2 = (tileMiddleY * tileSize - p3.y) * inv_a_2_3 + p3.x - inv_a_2_3t;
+    x1 = (tileMiddleY * tileSize - p3.y) * inv_a_1_3t/tileSize + p3.x - inv_a_1_3t;
+    x2 = (tileMiddleY * tileSize - p3.y) * inv_a_2_3t/tileSize + p3.x - inv_a_2_3t;
     x1p = x1 + inv_a_1_3t;
     x2p = x2 + inv_a_2_3t;
     for (int ty = tileMiddleY; ty <= tileEndY; ty++)
@@ -109,10 +105,10 @@ __kernel void CalculateCacheTrianglesPerTile(
         int txs = (int)fmax(0.0f, floor(min / tileSize));
         int txe = (int)fmin(tileCountX, ceil(max / tileSize));
 
-        for (int tx = txs; tx < txe; tx++)
+        for (int tx = txs; tx <= txe; tx++)
         {
             int tileIndex = ty * tileCountX + tx;
-            if(0 <= tileIndex && tileIndex < tileCountY * tileCountX)
+            //if(0 <= tileIndex && tileIndex < tileCountY * tileCountX)
             {
                 int writeIndex = atomic_add(&(triangleCountPerTile[tileIndex]), 1);
 

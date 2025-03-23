@@ -67,6 +67,9 @@ public:
 		int quadCountWidth = *width / QuadSize;
 		int quadCountHeight = *height / QuadSize;
 
+		int zeroValue = 0;
+		GPUControl.SetBufferDatas(BufferID_TriangleCountPerTile, &zeroValue, sizeof(int) * quadCountWidth * quadCountHeight);
+
 
 		size_t sizes2[] = 
 		{ sizeof(cl_mem), sizeof(cl_mem), 
@@ -77,16 +80,6 @@ public:
 		  GPUControl.GetBufferPtr(buffefID_vertices),                  GPUControl.GetBufferPtr(bufferID_triangles),
 		  width, height,													 &QuadSize, &MaxTriangleCountPerQuad };
 
-		//Debug::Log("BB");
-		//int* tmp = new int[quadCountWidth * quadCountHeight];
-		////GPUControl.ReadBuffer(BufferID_TriangleCountPerTile, sizeof(int) * quadCountWidth * quadCountHeight, tmp);
-		//for (int s = 0; s < quadCountWidth * quadCountHeight; s++)
-		//{
-		//	//if(tmp[s] > 3)
-		//		//Debug::Log(tmp[s]);
-		//}
-
-		//delete[] tmp;
 		GPUControl.ExecuteKernel(KernelID_CalculateCacheTrianglesPerTile, trianglesLength, 8, sizes2, args2);
 
 		size_t sizes3[] =

@@ -1,35 +1,63 @@
 ﻿  EngineController.cpp
-D:\VisualStudio\Rendering\Minerva\Minerva\Engine\Timer.h(29,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\Timer.h(29,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Engine/EngineController.cpp')
   
-D:\VisualStudio\Rendering\Minerva\Minerva\Engine\Timer.h(33,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\Timer.h(33,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Engine/EngineController.cpp')
   
+  OpeneCLController.cpp
+  MBitmap.cpp
+  MColor.cpp
+  RenderTarget.cpp
+  Camera.cpp
+  MeshRenderer.cpp
+  RenderData.cpp
   Renderer.cpp
-D:\VisualStudio\Rendering\Minerva\Minerva\Engine\Timer.h(29,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\Timer.h(29,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Engine/Graphics3D/RenderingPipeline/Renderer.cpp')
   
-D:\VisualStudio\Rendering\Minerva\Minerva\Engine\Timer.h(33,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\Timer.h(33,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Engine/Graphics3D/RenderingPipeline/Renderer.cpp')
   
+  MColorExterns.cpp
+  Quaternion.cpp
+C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\Quaternion.cpp(37,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\Quaternion.cpp(38,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\Quaternion.cpp(39,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\Quaternion.cpp(40,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\Quaternion.cpp(41,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\Quaternion.cpp(42,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  TransformMatrixCalculator.cpp
+  Vector2.cpp
+C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\Vector2.cpp(14,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Vector3.cpp
+C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\Vector3.cpp(15,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Vector4.cpp
+  Timer.cpp
+C:\Personal\Graphics\Minerva\Minerva\Engine\Timer.h(29,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Timer.cpp')
+  
+C:\Personal\Graphics\Minerva\Minerva\Engine\Timer.h(33,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Timer.cpp')
+  
+  Window.cpp
   WinMain.cpp
-D:\VisualStudio\Rendering\Minerva\Minerva\Engine\Timer.h(29,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\Timer.h(29,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'WinMain.cpp')
   
-D:\VisualStudio\Rendering\Minerva\Minerva\Engine\Timer.h(33,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\Engine\Timer.h(33,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'WinMain.cpp')
   
-D:\VisualStudio\Rendering\Minerva\Minerva\MinervaWin.h(4,9): warning C4005: '_WIN32_WINNT': macro redefinition
+C:\Personal\Graphics\Minerva\Minerva\MinervaWin.h(4,9): warning C4005: '_WIN32_WINNT': macro redefinition
   (compiling source file 'WinMain.cpp')
       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\sdkddkver.h(224,10):
       see previous definition of '_WIN32_WINNT'
   
-D:\VisualStudio\Rendering\Minerva\Minerva\MinervaWin.h(47,9): warning C4005: 'STRICT': macro redefinition
+C:\Personal\Graphics\Minerva\Minerva\MinervaWin.h(47,9): warning C4005: 'STRICT': macro redefinition
   (compiling source file 'WinMain.cpp')
       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\minwindef.h(23,9):
       see previous definition of 'STRICT'
   
-D:\VisualStudio\Rendering\Minerva\Minerva\WinMain.cpp(109,23): warning C4129: 'A': unrecognized character escape sequence
-D:\VisualStudio\Rendering\Minerva\Minerva\WinMain.cpp(184,13): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+C:\Personal\Graphics\Minerva\Minerva\WinMain.cpp(185,13): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
   Generating Code...
-  Minerva.vcxproj -> D:\VisualStudio\Rendering\Minerva\x64\Debug\Minerva.exe
+  Minerva.vcxproj -> C:\Personal\Graphics\Minerva\x64\Debug\Minerva.exe

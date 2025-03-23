@@ -21,7 +21,7 @@ void Renderer::Initialize()
 	std::string kernels_rasterizer[] = { "Engine/GPU/OpenCL/CL_Maths.cl", "Engine/GPU/OpenCL/CL_Rasterizer.cl" };
 	int ProgramID_rasterizer = GPUControl.LoadKernelProgram(kernels_rasterizer, 2);
 	ThisRasterizer = Rasterizer();
-	ThisRasterizer.Initialize(ProgramID_rasterizer, "CalculateCacheTrianglesPerTile", "CalculateRastersPerTile", 4, 4, 2, 16);
+	ThisRasterizer.Initialize(ProgramID_rasterizer, "CalculateCacheTrianglesPerTile", "CalculateRastersPerTile", 4, 4, 2, 64);
 }
 void Renderer::Render()
 {
@@ -66,7 +66,7 @@ void Renderer::RenderOnSingleCamera(Camera* cam)
 	int width = cam->Width;
 	int height = cam->Height;
 
-	MBitmap frameBuffer = MBitmap(width, height);
+	MBitmap frameBuffer = MBitmap(width, height);	
 	MColor* fBuffer = new MColor[width * height];
 	for (int i = 0; i < width * height; i++)
 	{
@@ -91,7 +91,6 @@ void Renderer::RenderOnSingleCamera(Camera* cam)
 			continue;
 		Matrix4x4 M = CreateTransformMatrix(owner.get()->GetWordPosition(), owner.get()->GetWordRotation(), owner.get()->GetWorldScale());
 		Matrix4x4 R = CreateRotationMatrix(owner.get()->GetWordRotation());
-		//for (auto iter_data = target->Datas.begin(); iter_data != target->Datas.end(); iter_data++)
 		for (auto& d : t->Datas)
 		{
 			int length = d.GetVertices_Length();
@@ -103,16 +102,6 @@ void Renderer::RenderOnSingleCamera(Camera* cam)
 			int bufferResultNormals = GPUControl.CreateBuffer(CL_MEM_READ_WRITE, sizeof(Vector3) * length, nullptr);
 
 			VTXShader.Execute(length, bufferVectors, bufferNormals, bufferResults, bufferResultNormals, &M, &VP, &R, &width, &height);
-			//Debug::Log("AA");
-			//Debug::Log(length);
-			//Vector3* tmp = new Vector3[length];
-			//GPUControl.ReadBuffer(bufferResults, sizeof(Vector3) * length, tmp);
-			//for (int s = 0; s < length; s++)
-			//{
-			//		Debug::Log(tmp[s]);
-			//}
-
-			//delete[] tmp;
 			ThisRasterizer.Execute(bufferResults, bufferTriangles, bufferResultNormals, bufferFrameBuffer, trianglesLength, &width, &height, &light);
 
 

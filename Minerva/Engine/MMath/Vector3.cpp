@@ -43,6 +43,11 @@ Vector3 Vector3::ElemetProduct(Vector3 l, Vector3 r)
 	return Vector3(l.x * r.x, l.y * r.y, l.z * r.z);
 }
 
+Vector3 Vector3::ElemetDivision(Vector3 l, Vector3 r)
+{
+	return Vector3(l.x / r.x, l.y / r.y, l.z / r.z);
+}
+
 Vector3 operator*(Vector3 l, float r) { return Vector3(l.x * r, l.y * r, l.z * r); }
 Vector3 operator*(float l, Vector3 r) { return r * l; }
 Vector3 operator+(Vector3 l, Vector3 r) { return Vector3(l.x + r.x, l.y + r.y, l.z + r.z); }

@@ -104,20 +104,21 @@ int CALLBACK WinMain(
 	auto go = GameObject::CreateGameObject(scene);
 	auto mr = go->AddComponent<MeshRenderer>();
 	//go->SetActive(false);
-	go->SetLocalScale(Vector3(1, 1, 1) * 0.5f);
+	go->SetWorldScale(Vector3(1, 1, 1) * 1.5f);
+	go->SetWorldPosition(Vector3(-4, 0, 0));
 	RenderData d;
-	MeshReader::ReadMesh("C:\Aereo.obj", &d);
+	MeshReader::ReadMesh("C:/Users/¹®Á¾¿í/Desktop/Aereo.obj", &d);
 	mr.get()->Datas.emplace_back(d);
 
 	auto go2 = GameObject::CreateGameObject(scene);
-	go2->SetLocalPosition(Vector3(2, 0, 0));
 	auto mr2 = go2->AddComponent<MeshRenderer>();
 
 	RenderData d2;
 	d2.AddCubeData();
 	mr2.get()->Datas.emplace_back(d2);
 
-	go2->SetLocalScale(Vector3(1, 1, 1) * 0.4f);
+	go2->SetWorldScale(Vector3(1, 1, 1) * 2.1f);
+	go2->SetWorldPosition(Vector3(4, 0, 0));
 
 
 	const auto pClassName = L"hw3d";

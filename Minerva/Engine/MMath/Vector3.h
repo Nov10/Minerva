@@ -18,6 +18,7 @@ struct Vector3
 	static float Dot(Vector3 l, Vector3 r);
 	static Vector3 Cross(Vector3 v1, Vector3 v2);
 	static Vector3 ElemetProduct(Vector3 l, Vector3 r);
+	static Vector3 ElemetDivision(Vector3 l, Vector3 r);
 
 } typedef Vector3;
 Vector3 operator*(Vector3 l, float r);

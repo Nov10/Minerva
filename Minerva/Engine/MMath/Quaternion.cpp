@@ -63,6 +63,11 @@ Vector3 Quaternion::ToEulerAngles() const {
     ) * Rad2Deg;
 }
 
+Quaternion Quaternion::Inverse() const
+{
+	return conjugate().normalized();
+}
+
 Quaternion Quaternion::Lerp(const Quaternion& q1, const Quaternion& q2, float t) {
     return Quaternion(
         q1.w + t * (q2.w - q1.w),

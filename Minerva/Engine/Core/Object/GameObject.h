@@ -88,6 +88,46 @@ public:
 		}
 	}
 
+	void SetWorldPosition(const Vector3& position)
+	{
+		if (Parent != nullptr)
+		{
+			Vector3 parentWorldPosition = Parent->GetWordPosition();
+			Vector3 diff = position - parentWorldPosition;
+			LocalPosition = diff;
+		}
+		else
+		{
+			LocalPosition = position;
+		}
+	}
+	void SetWorldRotation(const Quaternion& rotation)
+	{
+		if (Parent != nullptr)
+		{
+			Quaternion parentWorldRotation = Parent->GetWordRotation();
+			Quaternion diff = parentWorldRotation.Inverse() * rotation;
+			LocalRotation = diff;
+		}
+		else
+		{
+			LocalRotation = rotation;
+		}
+	}
+	void SetWorldScale(const Vector3& scale)
+	{
+		if (Parent != nullptr)
+		{
+			Vector3 parentWorldScale = Parent->GetWorldScale();
+			Vector3 diff = Vector3::ElemetDivision(scale, parentWorldScale);
+			LocalScale = diff;
+		}
+		else
+		{
+			LocalScale = scale;
+		}
+	}
+
 
 	template<typename T>
 	std::shared_ptr<T> AddComponent()
