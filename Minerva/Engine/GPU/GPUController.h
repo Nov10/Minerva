@@ -13,7 +13,7 @@ typedef unsigned __int64 Flag_Buffer_Creation;
 #define FLAG_BUFFER_SVM_FINE_GRAIN_BUFFER                (1 << 10)   /* used by cl_svm_mem_flags only */
 #define FLAG_BUFFER_SVM_ATOMICS                          (1 << 11)   /* used by cl_svm_mem_flags only */
 #define FLAG_BUFFER_KERNEL_READ_AND_WRITE                (1 << 12)
-
+#include  <string>
 class GPUController
 {
 public:

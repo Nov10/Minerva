@@ -1,3 +1,4 @@
+C:\Personal\Graphics\Minerva\Minerva\Engine\Core\Object\GameObject.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\GameObject.obj
 C:\Personal\Graphics\Minerva\Minerva\Engine\EngineController.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\EngineController.obj
 C:\Personal\Graphics\Minerva\Minerva\Engine\GPU\OpenCL\OpeneCLController.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\OpeneCLController.obj
 C:\Personal\Graphics\Minerva\Minerva\Engine\Graphics2D\MBitmap.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\MBitmap.obj
@@ -6,7 +7,9 @@ C:\Personal\Graphics\Minerva\Minerva\Engine\Graphics2D\RenderTarget.cpp;C:\Perso
 C:\Personal\Graphics\Minerva\Minerva\Engine\Graphics3D\Camera.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\Camera.obj
 C:\Personal\Graphics\Minerva\Minerva\Engine\Graphics3D\MeshRenderer.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\MeshRenderer.obj
 C:\Personal\Graphics\Minerva\Minerva\Engine\Graphics3D\RenderData.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\RenderData.obj
+C:\Personal\Graphics\Minerva\Minerva\Engine\Graphics3D\RenderingPipeline\Rasterizer.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\Rasterizer.obj
 C:\Personal\Graphics\Minerva\Minerva\Engine\Graphics3D\RenderingPipeline\Renderer.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\Renderer.obj
+C:\Personal\Graphics\Minerva\Minerva\Engine\Graphics3D\RenderingPipeline\VertexShader.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\VertexShader.obj
 C:\Personal\Graphics\Minerva\Minerva\Engine\MColorExterns.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\MColorExterns.obj
 C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\Quaternion.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\Quaternion.obj
 C:\Personal\Graphics\Minerva\Minerva\Engine\MMath\TransformMatrixCalculator.cpp;C:\Personal\Graphics\Minerva\Minerva\x64\Debug\TransformMatrixCalculator.obj

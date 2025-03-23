@@ -9,7 +9,7 @@
 #include "Engine/File/GraphicsFile/MeshReader.h"
 
 GPUController* GController;
-EngineController engine = EngineController(1920, 1080);
+EngineController MinervaEngine = EngineController(1920, 1080);
 
 //Camera MainCamera(Vector3(0, 0, -135), Vector3(0, 0, 1), 60, 800, 800);
 //Camera MainCamera(Vector3(0, 0, -5), Vector3(0, 0, 1), 60, 800, 800);
@@ -57,9 +57,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(hWnd, &ps);
 
-		//Rend.Render();
-		engine.Render();
-		auto& result = (*engine.GetRenderedResult());
+		auto& result = (*MinervaEngine.GetRenderedResult());
 		auto hBitmap = result.ToHBITMAP(hdc);
 		//auto hBitmap = MainCamera.Target.ToHBITMAP(hdc);
 
@@ -84,18 +82,18 @@ int CALLBACK WinMain(
 	LPSTR lpCmdLine,
 	int   nCmdShow)
 {
-	(*engine.GetRenderedResult()).Clear(MColor(10, 20, 150));
+	(*MinervaEngine.GetRenderedResult()).Clear(MColor(10, 20, 150));
 	OpenCLController o = OpenCLController();
 	GController = &o;
 	GPUControl.Initialize();
 
 
 	Scene scene = Scene();
-	engine.Scenes.emplace_back(&scene);
+	MinervaEngine.Scenes.emplace_back(&scene);
 
 	Renderer mainRenderer = Renderer();
 	mainRenderer.Initialize();
-	engine.AddRenderer(&mainRenderer);
+	MinervaEngine.AddRenderer(&mainRenderer);
 
 	Camera mainCamera = Camera(Vector3(0, 0, -10), Vector3(0, 0, 1), 60, 800, 800);
 	mainCamera.IsMainGameCamera = true;
@@ -103,7 +101,6 @@ int CALLBACK WinMain(
 
 	auto go = GameObject::CreateGameObject(scene);
 	auto mr = go->AddComponent<MeshRenderer>();
-	//go->SetActive(false);
 	go->SetWorldScale(Vector3(1, 1, 1) * 1.5f);
 	go->SetWorldPosition(Vector3(-4, 0, 0));
 	RenderData d;
@@ -112,15 +109,13 @@ int CALLBACK WinMain(
 
 	auto go2 = GameObject::CreateGameObject(scene);
 	auto mr2 = go2->AddComponent<MeshRenderer>();
-
+	go2->SetWorldScale(Vector3(1, 1, 1) * 1.1f);
 	RenderData d2;
 	d2.AddCubeData();
 	mr2.get()->Datas.emplace_back(d2);
 
-	go2->SetWorldScale(Vector3(1, 1, 1) * 2.1f);
-	go2->SetWorldPosition(Vector3(4, 0, 0));
-
-
+	go2->SetParent(go);
+	go2->SetLocalPosition(Vector3(12, 0, 0));
 	const auto pClassName = L"hw3d";
 	//윈도우 클래스 등록
 	WNDCLASSEX wc = { 0 };
@@ -155,13 +150,13 @@ int CALLBACK WinMain(
 	MSG msg;
 	BOOL gResult;
 	Timer::Initialize();
-	go->SetLocalRotation(Quaternion::FromEulerAngles(30, -30, 30));
 
 	while (true) {
 		Timer::Update();
 
-		go->SetLocalRotation(Quaternion::FromEulerAngles(10 * Timer::GetTotalTime(), 30 * Timer::GetTotalTime(), 10 * Timer::GetTotalTime()));
-		go2->SetLocalRotation(Quaternion::FromEulerAngles(10 * Timer::GetTotalTime(), 30 * Timer::GetTotalTime(), 10 * Timer::GetTotalTime()));
+		go->SetWorldRotation(Quaternion::FromEulerAngles(10 * Timer::GetTotalTime(), 30 * Timer::GetTotalTime(), 10 * Timer::GetTotalTime()));
+		//go2->SetWorldRotation(Quaternion::FromEulerAngles(10 * Timer::GetTotalTime(), 30 * Timer::GetTotalTime(), 10 * Timer::GetTotalTime()));
+		MinervaEngine.Update();
 		if ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
 		{
 			TranslateMessage(&msg);

@@ -4,7 +4,7 @@
 #include "../RenderData.h"
 #include "../Camera.h"
 #include "VertexShader.h"
-#include "../Rasterizer.h"
+#include "Rasterizer.h"
 
 class Renderer
 {

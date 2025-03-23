@@ -20,7 +20,7 @@ void Renderer::Initialize()
 
 	std::string kernels_rasterizer[] = { "Engine/GPU/OpenCL/CL_Maths.cl", "Engine/GPU/OpenCL/CL_Rasterizer.cl" };
 	int ProgramID_rasterizer = GPUControl.LoadKernelProgram(kernels_rasterizer, 2);
-	ThisRasterizer = Rasterizer();
+	//ThisRasterizer = Rasterizer();
 	ThisRasterizer.Initialize(ProgramID_rasterizer, "CalculateCacheTrianglesPerTile", "CalculateRastersPerTile", 4, 4, 2, 64);
 }
 void Renderer::Render()
@@ -89,8 +89,8 @@ void Renderer::RenderOnSingleCamera(Camera* cam)
 		auto owner = t->Owner.lock();
 		if (owner->IsActiveInScene() == false)
 			continue;
-		Matrix4x4 M = CreateTransformMatrix(owner.get()->GetWordPosition(), owner.get()->GetWordRotation(), owner.get()->GetWorldScale());
-		Matrix4x4 R = CreateRotationMatrix(owner.get()->GetWordRotation());
+		Matrix4x4 M = CreateTransformMatrix(owner.get()->GetWorldPosition(), owner.get()->GetWorldRotation(), owner.get()->GetWorldScale());
+		Matrix4x4 R = CreateRotationMatrix(owner.get()->GetWorldRotation());
 		for (auto& d : t->Datas)
 		{
 			int length = d.GetVertices_Length();
@@ -126,7 +126,7 @@ void Renderer::RenderOnSingleCamera(Camera* cam)
 
 	if (cam->IsMainGameCamera == true)
 	{
-		engine.SetResultImage(frameBuffer, 0);
+		MinervaEngine.SetResultImage(frameBuffer, 0);
 	}
 
 	delete[] fBuffer;

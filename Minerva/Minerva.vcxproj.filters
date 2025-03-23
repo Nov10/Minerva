@@ -76,6 +76,12 @@
     <Filter Include="헤더 파일\Engine\Core\Component">
       <UniqueIdentifier>{f849e368-642d-45cd-a50a-f3a7354084fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Engine\Core">
+      <UniqueIdentifier>{e5d3f58e-499b-4147-b350-99f48a78882b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Engine\Core\Object">
+      <UniqueIdentifier>{66092cae-ef32-45aa-bcf2-d07011479130}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -162,9 +168,6 @@
     <ClInclude Include="Engine\Graphics3D\MeshRenderer.h">
       <Filter>헤더 파일\Engine\Graphics3D</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Graphics3D\Rasterizer.h">
-      <Filter>헤더 파일\Engine\Graphics3D\RenderingPipeline</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\GPU\GPUController.h">
       <Filter>헤더 파일\Engine\GPU</Filter>
     </ClInclude>
@@ -193,6 +196,9 @@
       <Filter>헤더 파일\Engine\Core\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Graphics3D\RenderingPipeline\MeshRendererContainer.h">
+      <Filter>헤더 파일\Engine\Graphics3D\RenderingPipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics3D\RenderingPipeline\Rasterizer.h">
       <Filter>헤더 파일\Engine\Graphics3D\RenderingPipeline</Filter>
     </ClInclude>
   </ItemGroup>
@@ -250,6 +256,15 @@
     </ClCompile>
     <ClCompile Include="Engine\MMath\Vector4.cpp">
       <Filter>소스 파일\Engine\MMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Object\GameObject.cpp">
+      <Filter>소스 파일\Engine\Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics3D\RenderingPipeline\Rasterizer.cpp">
+      <Filter>소스 파일\Engine\Graphics3D\RenderingPipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics3D\RenderingPipeline\VertexShader.cpp">
+      <Filter>소스 파일\Engine\Graphics3D\RenderingPipeline</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

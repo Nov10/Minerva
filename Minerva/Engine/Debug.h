@@ -3,6 +3,7 @@
 #include <iostream>
 #include  <string>
 #include "MMath/MMath.h"
+#include "../Engine/Graphics2D/Minerva2DGraphics.h"
 
 class Debug {
 public:

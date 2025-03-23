@@ -40,4 +40,4 @@ private:
 	std::vector<Renderer*> Renderers;
 };
 
-extern EngineController engine;
+extern EngineController MinervaEngine;
